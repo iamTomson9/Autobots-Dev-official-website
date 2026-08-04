@@ -1,0 +1,14 @@
+# AutoBots Dev - Robots.txt
+# https://autobotsdev.com
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+
+Disallow: /admin/
+Disallow: /scratch/
+
+# XML Sitemap Location
+Sitemap: https://autobotsdev.com/sitemap.xml
