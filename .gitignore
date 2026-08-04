@@ -15,3 +15,5 @@ Thumbs.db
 
 # Scratch & Temporary Build Files
 scratch/
+
+.vercel

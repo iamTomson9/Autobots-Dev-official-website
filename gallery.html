@@ -78,8 +78,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
@@ -89,13 +92,13 @@
   <header class="navbar">
     <div class="container nav-container">
             <a href="index.html" class="brand-logo">
-        <img src="assets/images/logo.svg" alt="AutoBots Dev Logo" style="height: 46px; width: auto; max-width: 220px; display: block;" />
+        <img decoding="async" src="assets/images/logo.svg" alt="AutoBots Dev Logo" style="height: 46px; width: auto; max-width: 220px; display: block;" />
       </a>
       <nav class="nav-links" id="mainNav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="clients.html" class="nav-link">Our Clients</a>
-        <a href="gallery.html" class="nav-link active">Gallery</a>
+        <a href="gallery.html" class="nav-link active" aria-current="page">Gallery</a>
         <a href="about.html" class="nav-link">About Us</a>
         <a href="academy.html" class="nav-link">Academy</a>
         <a href="partner.html" class="nav-link">Partner</a>
@@ -105,7 +108,7 @@
         <a href="quote.html" class="btn btn-primary btn-sm" style="padding: 0.5rem 1.15rem; font-weight: 700; font-size: 0.85rem; border-radius: 9999px; box-shadow: 0 4px 14px rgba(30,111,255,0.3); white-space: nowrap;">
           <i class="fa-solid fa-calculator"></i> Instant Quote
         </a>
-        <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobileToggle">
+        <button class="mobile-toggle" aria-label="Toggle mobile navigation menu" aria-expanded="false" id="mobileToggle">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -172,7 +175,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="brand-logo" style="color: var(--color-white);">
-            <img src="assets/images/logo.svg" alt="AutobotsDev Logo" style="height: 40px; filter: brightness(0) invert(1);" />
+            <img decoding="async" src="assets/images/logo.svg" alt="AutobotsDev Logo" style="height: 40px; filter: brightness(0) invert(1);" />
             
           </a>
           <p>Botswana's premier youth-led software engineering company. Building AI-powered apps, websites, and automated systems that drive real growth.</p>
@@ -203,11 +206,11 @@
           <p style="font-size: 0.9rem; color: #A0AEC0;"><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> +267 73156636</p>
           <p style="font-size: 0.9rem; color: #A0AEC0;"><i class="fa-solid fa-envelope" style="color: var(--color-blue);"></i> autobotsdev49@gmail.com</p>
           <div class="social-links" style="margin-top: 1rem;">
-            <a href="https://www.facebook.com/profile.php?id=61590910041864" target="_blank" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/autobotsdev/" target="_blank" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/autobots-dev-721979401/" target="_blank" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.tiktok.com/@autobotsdev" target="_blank" class="social-link" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://wa.me/26773156636" target="_blank" class="social-link" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61590910041864" target="_blank" class="social-link" title="Facebook" aria-label="Visit AutoBots Dev Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/autobotsdev/" target="_blank" class="social-link" title="Instagram" aria-label="Visit AutoBots Dev Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/autobots-dev-721979401/" target="_blank" class="social-link" title="LinkedIn" aria-label="Visit AutoBots Dev LinkedIn Company Page"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.tiktok.com/@autobotsdev" target="_blank" class="social-link" title="TikTok" aria-label="Visit AutoBots Dev TikTok Account"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://wa.me/26773156636" target="_blank" class="social-link" title="WhatsApp" aria-label="Chat with AutoBots Dev on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
       </div>
