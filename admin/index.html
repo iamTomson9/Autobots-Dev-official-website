@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Portal — AutobotsDev</title>
+  <meta name="description" content="Protected Admin Console for AutobotsDev Management.">
+  <meta name="robots" content="noindex, nofollow">
   
+  <!-- Favicon / Tab Icons -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg" />
+  <link rel="apple-touch-icon" href="../assets/images/logo.svg" />
+  <link rel="shortcut icon" href="../assets/images/logo.svg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -18,8 +23,9 @@
   <!-- Admin Login Card (Default View) -->
   <div id="adminLoginCard" class="login-card">
     <div class="text-center" style="margin-bottom: 1.75rem;">
-      <img src="../assets/images/logo.svg" alt="AutobotsDev" style="height: 48px; margin: 0 auto 0.75rem auto;" />
-      <span class="section-tag" style="margin-bottom: 0;"><i class="fa-solid fa-lock"></i> Protected Admin Console</span>
+      <img src="../assets/images/logo.svg" alt="AutobotsDev Logo" style="height: 48px; margin: 0 auto 0.75rem auto;" />
+      <h1 style="font-size: 1.4rem; margin: 0.25rem 0 0.5rem 0; color: var(--color-obsidian);">Protected Admin Console</h1>
+      <span class="section-tag" style="margin-bottom: 0;"><i class="fa-solid fa-lock"></i> Authorised Personnel Only</span>
     </div>
 
     <form id="adminLoginForm">
@@ -43,10 +49,16 @@
   <!-- Admin Dashboard Layout (Hidden until Auth) -->
   <div id="adminDashboardLayout" class="admin-layout" style="display: none;">
     
+    <!-- Mobile Backdrop Overlay -->
+    <div id="adminOverlay" class="admin-overlay"></div>
+
     <!-- Admin Sidebar -->
-    <aside class="admin-sidebar">
+    <aside class="admin-sidebar" id="adminSidebar">
       <div class="admin-sidebar-header">
         <img src="../assets/images/logo.svg" alt="AutobotsDev" style="height: 32px; filter: brightness(0) invert(1);" />
+        <button id="adminCloseSidebar" class="admin-mobile-toggle" style="color: #FFFFFF; margin-left: auto;" aria-label="Close sidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
 
       <nav class="admin-nav">
@@ -85,6 +97,11 @@
 
     <!-- Admin Main Body -->
     <main class="admin-main">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+        <button id="adminMobileToggle" class="admin-mobile-toggle" aria-label="Toggle admin sidebar menu">
+          <i class="fa-solid fa-bars"></i> Navigation Menu
+        </button>
+      </div>
       
       <!-- Top Stat Bar -->
       <div class="grid grid-4" style="margin-bottom: 2rem;">

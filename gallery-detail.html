@@ -3,8 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Spotlight — AutobotsDev</title>
+  <title>Project Spotlight & Architecture Breakdown | AutoBots Dev</title>
+  <meta name="description" content="Explore detailed technical case studies, mobile app architectures & software engineering specifications for live products built by AutoBots Dev in Botswana." />
+  <meta name="keywords" content="software project spotlight, app architecture case study, Botswana mobile app developer, AutoBots Dev gallery detail" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://autobotsdev.com/gallery-detail.html" />
+
+  <!-- Open Graph / Facebook / WhatsApp Social Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://autobotsdev.com/gallery-detail.html" />
+  <meta property="og:title" content="Project Spotlight & Architecture Breakdown | AutoBots Dev" />
+  <meta property="og:description" content="Explore detailed technical case studies, mobile app architectures & software engineering specifications for live products built by AutoBots Dev in Botswana." />
+  <meta property="og:image" content="https://autobotsdev.com/assets/images/hero-laptop-desk.jpg" />
+  <meta property="og:site_name" content="AutoBots Dev Botswana" />
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Project Spotlight & Architecture Breakdown | AutoBots Dev" />
+  <meta name="twitter:description" content="Explore detailed technical case studies, mobile app architectures & software engineering specifications for live products built by AutoBots Dev in Botswana." />
+  <meta name="twitter:image" content="https://autobotsdev.com/assets/images/hero-laptop-desk.jpg" />
+
+  <!-- Structured Data JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Property Lynk Mobile App",
+    "operatingSystem": "Android, Web",
+    "applicationCategory": "RealEstateApplication",
+    "author": {
+      "@type": "Organization",
+      "name": "AutoBots Dev"
+    }
+  }
+  </script>
   
+  <!-- Favicon / Tab Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+  <link rel="apple-touch-icon" href="assets/images/logo.svg" />
+  <link rel="shortcut icon" href="assets/images/logo.svg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -18,9 +56,9 @@
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo">
-        <img src="assets/images/logo.svg" alt="AutobotsDev Logo" style="height: 42px;" />
+        <img decoding="async" src="assets/images/logo.svg" alt="AutoBots Dev Logo" width="220" height="42" style="height: 42px; width: auto; max-width: 220px; display: block;" />
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" id="mainNav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="quote.html" class="nav-link">Instant Quote</a>
@@ -33,57 +71,62 @@
       </nav>
       <div class="nav-actions">
         <a href="quote.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-calculator"></i> Get Instant Quote</a>
+        <button class="mobile-toggle" aria-label="Toggle mobile navigation menu" aria-expanded="false" id="mobileToggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Project Container -->
-  <section class="section section-light" style="padding: 4rem 0;">
-    <div class="container" style="max-width: 900px;" id="projectDetailContainer">
-      <span class="section-tag" id="detailBadge">Mobile Application</span>
-      <h1 id="detailTitle" style="margin-bottom: 1rem;">Property Lynk Mobile App</h1>
-      <p id="detailShortDesc" style="font-size: 1.15rem; color: var(--color-gray-dark); margin-bottom: 2rem;">
-        The premier rental property network in Botswana — connecting tenants with verified landlords and agents.
-      </p>
+  <main id="main-content">
+    <!-- Project Container -->
+    <section class="section section-light" style="padding: 4rem 0;">
+      <div class="container" style="max-width: 900px;" id="projectDetailContainer">
+        <span class="section-tag" id="detailBadge">Mobile Application</span>
+        <h1 id="detailTitle" style="margin-bottom: 1rem;">Property Lynk Mobile App</h1>
+        <p id="detailShortDesc" style="font-size: 1.15rem; color: var(--color-gray-dark); margin-bottom: 2rem;">
+          The premier rental property network in Botswana — connecting tenants with verified landlords and agents.
+        </p>
 
-      <div class="card" style="margin-bottom: 2rem; background-color: var(--color-obsidian); color: var(--color-white); padding: 3rem; text-align: center; border-radius: var(--radius-lg);">
-        <i class="fa-solid fa-mobile-screen-button" style="font-size: 4rem; color: var(--color-blue); margin-bottom: 1rem;"></i>
-        <h2 style="color: var(--color-white); margin-bottom: 0.5rem;">Deployed Live Solution</h2>
-        <p style="color: #A0AEC0; max-width: 540px; margin: 0 auto 1.5rem auto;">Architected, built, and maintained end-to-end by AutobotsDev software engineers in Gaborone.</p>
-        <div class="flex justify-center gap-2">
-          <a id="detailLiveLink" href="https://play.google.com/store/apps/details?id=com.autobots.propertylynk" target="_blank" class="btn btn-primary btn-lg">
-            <i class="fa-solid fa-external-link"></i> Access Live Product
-          </a>
-          <a href="quote.html" class="btn btn-outline btn-lg" style="color: var(--color-white); border-color: rgba(255,255,255,0.3);">
-            <i class="fa-solid fa-calculator"></i> Scope Similar MVP
-          </a>
+        <div class="card" style="margin-bottom: 2rem; background-color: var(--color-obsidian); color: var(--color-white); padding: 3rem; text-align: center; border-radius: var(--radius-lg);">
+          <i class="fa-solid fa-mobile-screen-button" style="font-size: 4rem; color: var(--color-blue); margin-bottom: 1rem;"></i>
+          <h2 style="color: var(--color-white); margin-bottom: 0.5rem;">Deployed Live Solution</h2>
+          <p style="color: #A0AEC0; max-width: 540px; margin: 0 auto 1.5rem auto;">Architected, built, and maintained end-to-end by AutobotsDev software engineers in Gaborone.</p>
+          <div class="flex justify-center gap-2" style="flex-wrap: wrap;">
+            <a id="detailLiveLink" href="https://play.google.com/store/apps/details?id=com.autobots.propertylynk" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" aria-label="Access Live Product on Google Play">
+              <i class="fa-solid fa-external-link"></i> Access Live Product
+            </a>
+            <a href="quote.html" class="btn btn-outline btn-lg" style="color: var(--color-white); border-color: rgba(255,255,255,0.3);" aria-label="Scope Similar MVP with Quotation Wizard">
+              <i class="fa-solid fa-calculator"></i> Scope Similar MVP
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 1rem;">Technical Specifications & Architecture</h3>
+          <ul class="feature-list" style="gap: 1rem;">
+            <li class="feature-item"><i class="fa-solid fa-circle-check"></i> <strong>Real-time Cloud Database:</strong> Instant sync across 2,400+ active property listings.</li>
+            <li class="feature-item"><i class="fa-solid fa-circle-check"></i> <strong>Location & Map Integration:</strong> GPS-based location filter across Mogoditshane, Tlokweng, and Gaborone blocks.</li>
+            <li class="feature-item"><i class="fa-solid fa-circle-check"></i> <strong>Landlord Verification Protocol:</strong> 98% verified landlord trust badge validation system.</li>
+            <li class="feature-item"><i class="fa-solid fa-circle-check"></i> <strong>Push Notifications:</strong> Instant push alerts for new property matches and viewing appointments.</li>
+          </ul>
         </div>
       </div>
-
-      <div class="card">
-        <h3 style="margin-bottom: 1rem;">Technical Specifications & Architecture</h3>
-        <ul class="feature-list" style="gap: 1rem;">
-          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> <strong>Real-time Cloud Database:</strong> Instant sync across 2,400+ active property listings.</li>
-          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> <strong>Location & Map Integration:</strong> GPS-based location filter across Mogoditshane, Tlokweng, and Gaborone blocks.</li>
-          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> <strong>Landlord Verification Protocol:</strong> 98% verified landlord trust badge validation system.</li>
-          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> <strong>Push Notifications:</strong> Instant push alerts for new property matches and viewing appointments.</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-bottom">
         <p>&copy; 2026 AutobotsDev Pty Ltd. All rights reserved.</p>
+        <p>Gaborone, Botswana, Built by AutobotsDev</p>
       </div>
     </div>
   </footer>
 
   <script type="module" src="js/firebase.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   <script type="module" src="js/chatbot.js"></script>
 </body>
 </html>

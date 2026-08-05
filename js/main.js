@@ -22,20 +22,59 @@ function initHeroPills() {
 function initNavbar() {
   const toggleBtn = document.querySelector('.mobile-toggle');
   const navLinks = document.querySelector('.nav-links');
+  const navbar = document.querySelector('.navbar');
 
   if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener('click', () => {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       navLinks.classList.toggle('show');
+      const isExpanded = navLinks.classList.contains('show');
+      toggleBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
       const icon = toggleBtn.querySelector('i');
       if (icon) {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-xmark');
+        icon.className = isExpanded ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      }
+    });
+
+    // Close mobile nav when clicking any nav link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1250) {
+          navLinks.classList.remove('show');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          const icon = toggleBtn.querySelector('i');
+          if (icon) icon.className = 'fa-solid fa-bars';
+        }
+      });
+    });
+
+    // Close menu when clicking outside navbar
+    document.addEventListener('click', (e) => {
+      if (navbar && !navbar.contains(e.target) && navLinks.classList.contains('show')) {
+        navLinks.classList.remove('show');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        const icon = toggleBtn.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
+      }
+    });
+
+    // Escape key handling
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (navLinks.classList.contains('show')) {
+          navLinks.classList.remove('show');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          const icon = toggleBtn.querySelector('i');
+          if (icon) icon.className = 'fa-solid fa-bars';
+        }
+        document.querySelectorAll('.modal-backdrop.active').forEach(backdrop => {
+          backdrop.classList.remove('active');
+        });
       }
     });
   }
 
   // Header shadow on scroll
-  const navbar = document.querySelector('.navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
       navbar?.classList.add('scrolled');

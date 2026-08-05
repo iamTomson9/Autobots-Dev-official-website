@@ -77,9 +77,17 @@
   
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Favicon / Tab Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+  <link rel="apple-touch-icon" href="assets/images/logo.svg" />
+  <link rel="shortcut icon" href="assets/images/logo.svg" />
+
+  <!-- LCP Image Preload -->
+  <link rel="preload" as="image" href="assets/images/hero/academy.png" fetchpriority="high" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
@@ -92,7 +100,7 @@
   <header class="navbar">
     <div class="container nav-container">
             <a href="index.html" class="brand-logo">
-        <img decoding="async" src="assets/images/logo.svg" alt="AutoBots Dev Logo" style="height: 46px; width: auto; max-width: 220px; display: block;" />
+        <img decoding="async" src="assets/images/logo.svg" alt="AutoBots Dev Logo" width="220" height="46" style="height: 46px; width: auto; max-width: 220px; display: block;" />
       </a>
       <nav class="nav-links" id="mainNav">
         <a href="index.html" class="nav-link">Home</a>
@@ -114,6 +122,8 @@
       </div>
     </div>
   </header>
+
+  <main id="main-content">
 
   <!-- Dark Hero Banner -->
   <section class="page-hero-banner" style="background-image: linear-gradient(180deg, rgba(8,12,22,0.88) 0%, rgba(15,23,42,0.75) 55%, rgba(248,250,252,0.98) 100%), url('assets/images/hero/academy.png'); background-size: cover; background-position: center;">
@@ -345,6 +355,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- Full Footer -->
   <footer class="footer">
@@ -399,7 +410,7 @@
   </footer>
 
   <script type="module" src="js/firebase.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   <script type="module">
     import { saveAcademyEnrollment } from './js/firebase.js';
 
@@ -407,7 +418,7 @@
       document.getElementById('parentFieldsGroup').style.display = 'grid';
     });
     document.getElementById('radioStudent').addEventListener('change', () => {
-      document.getElementById('parentFieldsGroup').style.display = one';
+      document.getElementById('parentFieldsGroup').style.display = 'none';
     });
 
     document.getElementById('academyEnrollForm').addEventListener('submit', async (e) => {
@@ -428,7 +439,7 @@
       };
 
       const result = await saveAcademyEnrollment(data);
-      document.getElementById('academyEnrollForm').style.display = one';
+      document.getElementById('academyEnrollForm').style.display = 'none';
       document.getElementById('regNumDisplay').innerText = result.regNumber;
       document.getElementById('academySuccessMsg').style.display = 'block';
     });

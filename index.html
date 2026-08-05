@@ -77,12 +77,17 @@
   
   
   
-  
+  <!-- Favicon / Tab Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+  <link rel="apple-touch-icon" href="assets/images/logo.svg" />
+  <link rel="shortcut icon" href="assets/images/logo.svg" />
+
+  <!-- LCP Image Preload -->
+  <link rel="preload" as="image" href="assets/images/hero-laptop-desk.jpg" fetchpriority="high" />
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   
   <!-- Font Awesome Icons -->
@@ -99,7 +104,7 @@
   <header class="navbar">
     <div class="container nav-container">
             <a href="index.html" class="brand-logo">
-        <img decoding="async" src="assets/images/logo.svg" alt="AutoBots Dev Logo" style="height: 46px; width: auto; max-width: 220px; display: block;" />
+        <img decoding="async" src="assets/images/logo.svg" alt="AutoBots Dev Logo" width="220" height="46" style="height: 46px; width: auto; max-width: 220px; display: block;" />
       </a>
       <nav class="nav-links" id="mainNav">
         <a href="index.html" class="nav-link active" aria-current="page">Home</a>
@@ -122,6 +127,7 @@
     </div>
   </header>
 
+  <main id="main-content">
   <!-- Powerful Client-Centric Hero Section addressing real-world technical challenges -->
   <section class="hero-centered" style="padding: 4.5rem 0 3.5rem 0;">
     <div class="container">
@@ -208,7 +214,7 @@
             <a href="https://play.google.com/store/apps/details?id=com.autobots.propertylynk" target="_blank" class="btn btn-primary">
               <i class="fa-brands fa-google-play"></i> Download on Google Play
             </a>
-            <a href="gallery-detail.html?id=property-lynk" class="btn btn-outline">
+            <a href="gallery-detail.html?id=property-lynk" class="btn btn-outline" aria-label="View Project Details for Property Lynk Mobile App">
               Project Details
             </a>
           </div>
@@ -231,11 +237,11 @@
               <li class="feature-item"><i class="fa-solid fa-circle-check"></i> Zero app installation required for customers</li>
             </ul>
           </div>
-          <div class="flex gap-2">
+          <div class="flex gap-2" style="flex-wrap: wrap;">
             <a href="https://easyorder.onl" target="_blank" class="btn btn-primary">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Live App (easyorder.onl)
             </a>
-            <a href="gallery-detail.html?id=easy-order" class="btn btn-outline">
+            <a href="gallery-detail.html?id=easy-order" class="btn btn-outline" aria-label="View Project Details for EasyOrder E-Commerce">
               Project Details
             </a>
           </div>
@@ -416,7 +422,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -473,7 +479,7 @@
 
   <!-- Scripts -->
   <script type="module" src="js/firebase.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   <script type="module" src="js/chatbot.js"></script>
 </body>
 </html>

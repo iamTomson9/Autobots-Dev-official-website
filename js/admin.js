@@ -52,11 +52,33 @@ function initAdminPortal() {
     }
   });
 
+  // Mobile Sidebar Toggle
+  const mobileToggle = document.getElementById('adminMobileToggle');
+  const closeSidebar = document.getElementById('adminCloseSidebar');
+  const sidebar = document.getElementById('adminSidebar');
+  const overlay = document.getElementById('adminOverlay');
+
+  function openMobileSidebar() {
+    sidebar?.classList.add('show');
+    overlay?.classList.add('show');
+  }
+
+  function closeMobileSidebar() {
+    sidebar?.classList.remove('show');
+    overlay?.classList.remove('show');
+  }
+
+  mobileToggle?.addEventListener('click', openMobileSidebar);
+  closeSidebar?.addEventListener('click', closeMobileSidebar);
+  overlay?.addEventListener('click', closeMobileSidebar);
+
   // Tab Switching
   document.querySelectorAll('.admin-nav-item').forEach(item => {
     item.addEventListener('click', () => {
       document.querySelectorAll('.admin-nav-item').forEach(i => i.classList.remove('active'));
       item.classList.add('active');
+
+      closeMobileSidebar();
 
       const tabTarget = item.dataset.tab;
       if (tabTarget) renderTabContent(tabTarget);
