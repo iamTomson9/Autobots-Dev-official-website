@@ -104,7 +104,7 @@
 
         <div class="card">
           <h3 style="margin-bottom: 1rem;">Technical Specifications & Architecture</h3>
-          <ul class="feature-list" style="gap: 1rem;">
+          <ul class="feature-list" style="gap: 1rem;" id="detailSpecsList">
             <li class="feature-item"><i class="fa-solid fa-circle-check"></i> <strong>Real-time Cloud Database:</strong> Instant sync across 2,400+ active property listings.</li>
             <li class="feature-item"><i class="fa-solid fa-circle-check"></i> <strong>Location & Map Integration:</strong> GPS-based location filter across Mogoditshane, Tlokweng, and Gaborone blocks.</li>
             <li class="feature-item"><i class="fa-solid fa-circle-check"></i> <strong>Landlord Verification Protocol:</strong> 98% verified landlord trust badge validation system.</li>
@@ -146,6 +146,7 @@
       const descEl = document.getElementById('detailShortDesc');
       const liveLinkEl = document.getElementById('detailLiveLink');
       const containerEl = document.getElementById('projectDetailContainer');
+      const specsListEl = document.getElementById('detailSpecsList');
 
       if (badgeEl) badgeEl.textContent = project.badge || project.category || 'Software Showcase';
       if (titleEl) titleEl.textContent = project.title;
@@ -168,6 +169,15 @@
           heroImg.innerHTML = `<img src="${project.image}" alt="${project.title}" style="max-height: 420px; width: 100%; object-fit: contain; padding: 1rem;" />`;
           containerEl.insertBefore(heroImg, descEl.nextSibling);
         }
+      }
+
+      if (specsListEl && project.specs && project.specs.length > 0) {
+        specsListEl.innerHTML = project.specs.map(s => `
+          <li class="feature-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <strong>${s.label}:</strong> ${s.desc}
+          </li>
+        `).join('');
       }
     });
   </script>

@@ -123,11 +123,15 @@ window.openProjectModal = function(id) {
     <p style="font-size: 1.05rem; color: var(--color-black); margin-bottom: 1.5rem;">${project.fullDesc || project.shortDesc || ''}</p>
 
     <div style="background-color: var(--color-bg-light); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
-      <h4 style="margin-bottom: 0.5rem;">Engineering Highlights</h4>
-      <ul class="feature-list">
-        <li class="feature-item"><i class="fa-solid fa-check"></i> Built & supported by AutoBots Dev engineering team in Gaborone</li>
-        <li class="feature-item"><i class="fa-solid fa-check"></i> Modern responsive frontend UI/UX & robust cloud DB backend</li>
-        <li class="feature-item"><i class="fa-solid fa-check"></i> High performance software tailored for African market scale</li>
+      <h4 style="margin-bottom: 0.75rem;">Engineering Highlights & Specifications</h4>
+      <ul class="feature-list" style="gap: 0.75rem;">
+        ${project.specs && project.specs.length > 0 ? project.specs.map(s => `
+          <li class="feature-item"><i class="fa-solid fa-check"></i> <strong>${s.label}:</strong> ${s.desc}</li>
+        `).join('') : `
+          <li class="feature-item"><i class="fa-solid fa-check"></i> Built & supported by AutoBots Dev engineering team in Gaborone</li>
+          <li class="feature-item"><i class="fa-solid fa-check"></i> Modern responsive frontend UI/UX & robust cloud DB backend</li>
+          <li class="feature-item"><i class="fa-solid fa-check"></i> High performance software tailored for African market scale</li>
+        `}
       </ul>
     </div>
 

@@ -25,7 +25,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-const LOCAL_STORAGE_KEY = 'autobots_local_db_v8';
+const LOCAL_STORAGE_KEY = 'autobots_local_db_v9';
 
 function getInitialState() {
   return {
@@ -160,7 +160,13 @@ function getInitialState() {
         shortDesc: 'The most trusted rental property discovery app in Botswana, connecting tenants with verified landlords and real estate agents.',
         liveUrl: 'https://play.google.com/store/apps/details?id=com.autobots.propertylynk',
         ctaText: 'Download on Google Play',
-        fullDesc: 'Property Lynk is a premier mobile real estate platform engineered by AutoBots Dev. Features include verified rental listings, map integration, direct landlord applications, viewing scheduler, and instant push notifications.'
+        fullDesc: 'Property Lynk is a premier mobile real estate platform engineered by AutoBots Dev. Features include verified rental listings, map integration, direct landlord applications, viewing scheduler, and instant push notifications.',
+        specs: [
+          { label: 'Real-time Cloud Database', desc: 'Instant sync across 2,400+ active property listings.' },
+          { label: 'Location & Map Integration', desc: 'GPS-based location filter across Mogoditshane, Tlokweng, and Gaborone blocks.' },
+          { label: 'Landlord Verification Protocol', desc: '98% verified landlord trust badge validation system.' },
+          { label: 'Push Notifications', desc: 'Instant push alerts for new property matches and viewing appointments.' }
+        ]
       },
       {
         id: 'easy-order',
@@ -172,7 +178,13 @@ function getInitialState() {
         shortDesc: 'Instant digital store & street food ordering engine built for modern African retail and food businesses with automated WhatsApp dispatching.',
         liveUrl: 'https://easyorder.onl',
         ctaText: 'View Live App',
-        fullDesc: 'EasyOrder simplifies customer order placement with real-time digital menus, inventory syncing, WhatsApp order dispatching, and automated order tracking.'
+        fullDesc: 'EasyOrder simplifies customer order placement with real-time digital menus, inventory syncing, WhatsApp order dispatching, and automated order tracking.',
+        specs: [
+          { label: 'Digital Menu & Storefront', desc: 'Instant-loading digital menu engine for street food and retail merchants.' },
+          { label: 'Automated WhatsApp Dispatch', desc: 'Direct customer order routing with auto-generated itemized receipt payload.' },
+          { label: 'Real-time Inventory Control', desc: 'Live stock level tracking and automated product availability toggles.' },
+          { label: 'Zero-Installation Web App', desc: 'High-speed PWA architecture requiring no mobile app store downloads.' }
+        ]
       },
       {
         id: 'rantao-attorneys',
@@ -184,7 +196,13 @@ function getInitialState() {
         shortDesc: 'Official web platform and legal case management portal designed for Rantao Attorneys law firm in Botswana.',
         liveUrl: 'gallery-detail.html?id=rantao-attorneys',
         ctaText: 'Explore System Specs',
-        fullDesc: 'Comprehensive legal corporate portal featuring consultation forms, partner profiles, document management, and client inquiry security for Rantao Attorneys.'
+        fullDesc: 'Comprehensive legal corporate portal featuring consultation forms, partner profiles, document management, and client inquiry security for Rantao Attorneys.',
+        specs: [
+          { label: 'Legal Consultation Portal', desc: 'Online legal inquiry intake and automated appointment scheduling system.' },
+          { label: 'Encrypted Document Security', desc: 'Secure client data privacy and confidential inquiry transmission.' },
+          { label: 'Practice Area Showcase', desc: 'Structured directory of corporate law, litigation, conveyancing, and legal services.' },
+          { label: 'Mobile-Responsive UX', desc: 'High-end legal corporate styling optimized across desktop, tablet, and mobile.' }
+        ]
       },
       {
         id: 'naledi-school',
@@ -196,7 +214,13 @@ function getInitialState() {
         shortDesc: 'Internal educational communication and student record system engineered for Naledi Senior Secondary School.',
         liveUrl: 'gallery-detail.html?id=naledi-school',
         ctaText: 'Explore System Specs',
-        fullDesc: 'School management ecosystem facilitating internal staff announcements, academic record keeping, and parent notification workflows for Naledi Senior Secondary School.'
+        fullDesc: 'School management ecosystem facilitating internal staff announcements, academic record keeping, and parent notification workflows for Naledi Senior Secondary School.',
+        specs: [
+          { label: 'Student & Staff Management', desc: 'Centralized record portal for academic announcements and department workflows.' },
+          { label: 'Digital Noticeboard Engine', desc: 'Real-time broadcast system for school circulars, exam timetables, and notices.' },
+          { label: 'Academic Resource Repository', desc: 'Secure cloud storage for curriculum materials and student announcements.' },
+          { label: 'Role-Based Access Control', desc: 'Strict permission security isolating administrative data from public view.' }
+        ]
       },
       {
         id: 'bdih-hackathon',
@@ -208,7 +232,13 @@ function getInitialState() {
         shortDesc: 'Digital healthcare system that earned a Top 4 finish at the Botswana Digital & Innovation Hub national challenge.',
         liveUrl: 'gallery-detail.html?id=bdih-hackathon',
         ctaText: 'View Challenge Details',
-        fullDesc: 'Engineered an AI-powered triage and appointment system, recognized by industry judges at the BDIH national innovation challenge.'
+        fullDesc: 'Engineered an AI-powered triage and appointment system, recognized by industry judges at the BDIH national innovation challenge.',
+        specs: [
+          { label: 'AI Patient Triage Algorithm', desc: 'Intelligent symptom evaluation and automated clinic prioritization system.' },
+          { label: 'Smart Appointment Engine', desc: 'Real-time queue booking system designed to minimize healthcare wait times.' },
+          { label: 'Health Sector Top 4 Award', desc: 'Ranked Top 4 nationwide at the Botswana Digital & Innovation Hub challenge.' },
+          { label: 'Microservice API Architecture', desc: 'Modular backend architecture built for national health system interoperability.' }
+        ]
       },
       {
         id: 'cavista-award',
@@ -220,7 +250,13 @@ function getInitialState() {
         shortDesc: 'Awarded Best Collaborative Team at the Cavista technology competition for high-speed delivery and software architecture.',
         liveUrl: 'gallery-detail.html?id=cavista-award',
         ctaText: 'View Challenge Details',
-        fullDesc: 'Demonstrated rapid prototyping, modular full-stack code architecture, and clear team communication under high-pressure competitive constraints at the Cavista hackathon.'
+        fullDesc: 'Demonstrated rapid prototyping, modular full-stack code architecture, and clear team communication under high-pressure competitive constraints at the Cavista hackathon.',
+        specs: [
+          { label: 'Best Collaborative Team Award', desc: 'Recognized for top-tier team coordination, communication, and fast delivery.' },
+          { label: 'Modular Full-Stack Architecture', desc: 'Clean, scalable codebase engineered under competitive time constraints.' },
+          { label: 'Rapid MVP Prototyping', desc: 'Built and demonstrated a fully operational software prototype within 24 hours.' },
+          { label: 'High-Performance UI/UX', desc: 'Sleek responsive interface presented live to tech industry executives and judges.' }
+        ]
       }
     ]
   };
