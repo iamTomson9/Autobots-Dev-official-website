@@ -25,7 +25,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-const LOCAL_STORAGE_KEY = 'autobots_local_db_v7';
+const LOCAL_STORAGE_KEY = 'autobots_local_db_v8';
 
 function getInitialState() {
   return {
@@ -204,7 +204,7 @@ function getInitialState() {
         category: 'competitions',
         badge: '🏅 Top 4 Innovation Award',
         isPublic: true,
-        image: 'assets/images/hero-laptop-desk.webp',
+        image: 'assets/images/projects/bdih-hackathon.webp',
         shortDesc: 'Digital healthcare system that earned a Top 4 finish at the Botswana Digital & Innovation Hub national challenge.',
         liveUrl: 'gallery-detail.html?id=bdih-hackathon',
         ctaText: 'View Challenge Details',
@@ -216,7 +216,7 @@ function getInitialState() {
         category: 'competitions',
         badge: '🏆 Best Collaborative Team Award',
         isPublic: true,
-        image: 'assets/images/projects/cavista-team.webp',
+        image: 'assets/images/projects/cavista-award.webp',
         shortDesc: 'Awarded Best Collaborative Team at the Cavista technology competition for high-speed delivery and software architecture.',
         liveUrl: 'gallery-detail.html?id=cavista-award',
         ctaText: 'View Challenge Details',
