@@ -25,7 +25,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-const LOCAL_STORAGE_KEY = 'autobots_local_db_v6';
+const LOCAL_STORAGE_KEY = 'autobots_local_db_v7';
 
 function getInitialState() {
   return {
