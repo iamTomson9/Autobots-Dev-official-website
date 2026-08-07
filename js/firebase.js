@@ -25,7 +25,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-const LOCAL_STORAGE_KEY = 'autobots_local_db_v5';
+const LOCAL_STORAGE_KEY = 'autobots_local_db_v6';
 
 function getInitialState() {
   return {
@@ -154,22 +154,22 @@ function getInitialState() {
         id: 'property-lynk',
         title: 'Property Lynk Mobile App',
         category: 'apps',
-        badge: '🟢 Live Public App',
+        badge: '🟢 Live Mobile App',
         isPublic: true,
-        image: 'assets/images/property_lynk.jpg',
+        image: 'assets/images/projects/property-lynk.webp',
         shortDesc: 'The most trusted rental property discovery app in Botswana, connecting tenants with verified landlords and real estate agents.',
-        liveUrl: 'https://propertylynkbotswana.vercel.app',
-        ctaText: 'View Live App',
+        liveUrl: 'https://play.google.com/store/apps/details?id=com.autobots.propertylynk',
+        ctaText: 'Download on Google Play',
         fullDesc: 'Property Lynk is a premier mobile real estate platform engineered by AutoBots Dev. Features include verified rental listings, map integration, direct landlord applications, viewing scheduler, and instant push notifications.'
       },
       {
         id: 'easy-order',
         title: 'EasyOrder E-Commerce Platform',
-        category: 'websites',
-        badge: '🟢 Live Public App',
+        category: 'apps',
+        badge: '🟢 Live Web & Mobile App',
         isPublic: true,
-        image: 'assets/images/easyorder.jpg',
-        shortDesc: 'Instant digital store & ordering engine built for modern African retail and food businesses with automated WhatsApp dispatching.',
+        image: 'assets/images/projects/easy-order.webp',
+        shortDesc: 'Instant digital store & street food ordering engine built for modern African retail and food businesses with automated WhatsApp dispatching.',
         liveUrl: 'https://easyorder.onl',
         ctaText: 'View Live App',
         fullDesc: 'EasyOrder simplifies customer order placement with real-time digital menus, inventory syncing, WhatsApp order dispatching, and automated order tracking.'
@@ -178,36 +178,36 @@ function getInitialState() {
         id: 'rantao-attorneys',
         title: 'Rantao Attorneys Official System',
         category: 'websites',
-        badge: '🔒 Private Client Portal',
-        isPublic: false,
-        image: null,
-        shortDesc: 'Official web platform and legal case management portal designed for Rantao Attorneys in Botswana.',
-        liveUrl: null,
-        ctaText: 'Private System',
-        fullDesc: 'Comprehensive legal corporate portal featuring consultation forms, partner profiles, document management, and client inquiry security.'
+        badge: '🟢 Corporate Legal Portal',
+        isPublic: true,
+        image: 'assets/images/projects/rantao-attorneys.webp',
+        shortDesc: 'Official web platform and legal case management portal designed for Rantao Attorneys law firm in Botswana.',
+        liveUrl: 'gallery-detail.html?id=rantao-attorneys',
+        ctaText: 'Explore System Specs',
+        fullDesc: 'Comprehensive legal corporate portal featuring consultation forms, partner profiles, document management, and client inquiry security for Rantao Attorneys.'
       },
       {
         id: 'naledi-school',
         title: 'Naledi Senior Secondary Portal',
         category: 'websites',
-        badge: '🔒 Private Institution System',
-        isPublic: false,
-        image: null,
+        badge: '🟢 Institution Portal',
+        isPublic: true,
+        image: 'assets/images/projects/naledi-school.webp',
         shortDesc: 'Internal educational communication and student record system engineered for Naledi Senior Secondary School.',
-        liveUrl: null,
-        ctaText: 'Private System',
-        fullDesc: 'School management ecosystem facilitating internal staff announcements, academic record keeping, and parent notification workflows.'
+        liveUrl: 'gallery-detail.html?id=naledi-school',
+        ctaText: 'Explore System Specs',
+        fullDesc: 'School management ecosystem facilitating internal staff announcements, academic record keeping, and parent notification workflows for Naledi Senior Secondary School.'
       },
       {
         id: 'bdih-hackathon',
         title: 'BDIH Health Sector Solution',
         category: 'competitions',
         badge: '🏅 Top 4 Innovation Award',
-        isPublic: false,
-        image: null,
+        isPublic: true,
+        image: 'assets/images/hero-laptop-desk.webp',
         shortDesc: 'Digital healthcare system that earned a Top 4 finish at the Botswana Digital & Innovation Hub national challenge.',
-        liveUrl: null,
-        ctaText: 'Internal Solution',
+        liveUrl: 'gallery-detail.html?id=bdih-hackathon',
+        ctaText: 'View Challenge Details',
         fullDesc: 'Engineered an AI-powered triage and appointment system, recognized by industry judges at the BDIH national innovation challenge.'
       },
       {
@@ -215,12 +215,12 @@ function getInitialState() {
         title: 'Cavista Technology Challenge',
         category: 'competitions',
         badge: '🏆 Best Collaborative Team Award',
-        isPublic: false,
-        image: null,
-        shortDesc: 'Awarded Best Collaborative Team at the Cavista technology competition for high-speed delivery and architecture.',
-        liveUrl: null,
-        ctaText: 'Internal Solution',
-        fullDesc: 'Demonstrated rapid prototyping, modular full-stack code architecture, and clear team communication under high-pressure competitive constraints.'
+        isPublic: true,
+        image: 'assets/images/projects/cavista-team.webp',
+        shortDesc: 'Awarded Best Collaborative Team at the Cavista technology competition for high-speed delivery and software architecture.',
+        liveUrl: 'gallery-detail.html?id=cavista-award',
+        ctaText: 'View Challenge Details',
+        fullDesc: 'Demonstrated rapid prototyping, modular full-stack code architecture, and clear team communication under high-pressure competitive constraints at the Cavista hackathon.'
       }
     ]
   };

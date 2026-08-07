@@ -128,5 +128,48 @@
   <script type="module" src="js/firebase.js"></script>
   <script src="js/main.js" defer></script>
   <script type="module" src="js/chatbot.js"></script>
+  <script type="module">
+    import { fetchAllAdminData } from './js/firebase.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = urlParams.get('id') || 'property-lynk';
+      
+      const adminData = fetchAllAdminData();
+      const projects = adminData.projects || [];
+      const project = projects.find(p => p.id === projectId) || projects[0];
+
+      if (!project) return;
+
+      const badgeEl = document.getElementById('detailBadge');
+      const titleEl = document.getElementById('detailTitle');
+      const descEl = document.getElementById('detailShortDesc');
+      const liveLinkEl = document.getElementById('detailLiveLink');
+      const containerEl = document.getElementById('projectDetailContainer');
+
+      if (badgeEl) badgeEl.textContent = project.badge || project.category || 'Software Showcase';
+      if (titleEl) titleEl.textContent = project.title;
+      if (descEl) descEl.textContent = project.fullDesc || project.shortDesc;
+      document.title = `${project.title} | Case Study & Architecture | AutoBots Dev`;
+
+      if (liveLinkEl && project.liveUrl) {
+        liveLinkEl.href = project.liveUrl;
+        liveLinkEl.innerHTML = `<i class="fa-solid fa-external-link"></i> ${project.ctaText || 'Access Live Product'}`;
+      } else if (liveLinkEl) {
+        liveLinkEl.style.display = 'none';
+      }
+
+      if (containerEl && project.image) {
+        let heroImg = document.getElementById('detailHeroImg');
+        if (!heroImg) {
+          heroImg = document.createElement('div');
+          heroImg.id = 'detailHeroImg';
+          heroImg.style.cssText = 'width: 100%; max-height: 420px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 2rem; border: 1px solid var(--color-gray-light); box-shadow: var(--shadow-md); background: #F8FAFC; text-align: center;';
+          heroImg.innerHTML = `<img src="${project.image}" alt="${project.title}" style="max-height: 420px; width: 100%; object-fit: contain; padding: 1rem;" />`;
+          containerEl.insertBefore(heroImg, descEl.nextSibling);
+        }
+      }
+    });
+  </script>
 </body>
 </html>

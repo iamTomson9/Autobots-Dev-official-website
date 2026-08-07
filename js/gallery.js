@@ -61,26 +61,29 @@ function renderGalleryItems(filter) {
   galleryGrid.innerHTML = filtered.map(item => {
     const isPublic = item.isPublic === true;
 
-    const imgHtml = isPublic
-      ? `<div class="project-img-wrapper" style="position: relative; overflow: hidden; height: 210px;">
-           <img src="${item.image}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80'" />
-           <span class="project-badge" style="background: #059669; color: white; font-weight: 700; position: absolute; top: 1rem; right: 1rem; padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;">${item.badge}</span>
+    const bgBg = item.id === 'property-lynk' ? '#0A192F' : item.id === 'easy-order' ? '#FFF7ED' : item.id === 'naledi-school' ? '#00C4EE' : '#F8FAFC';
+    const fitStyle = item.id === 'cavista-award' || item.id === 'bdih-hackathon' ? 'object-fit: cover;' : 'object-fit: contain; padding: 0.75rem;';
+
+    const imgHtml = item.image
+      ? `<div class="project-img-wrapper" style="position: relative; overflow: hidden; height: 220px; background: ${bgBg};">
+           <img src="${item.image}" alt="${item.title}" style="width: 100%; height: 100%; ${fitStyle}" loading="lazy" />
+           <span class="project-badge" style="background: #059669; color: white; font-weight: 700; position: absolute; top: 1rem; right: 1rem; padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">${item.badge}</span>
          </div>`
       : `<div style="height: 140px; background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #94A3B8; gap: 0.5rem; border-bottom: 1px solid #334155;">
            <i class="fa-solid fa-lock" style="font-size: 1.75rem; color: #64748B;"></i>
            <span style="font-size: 0.8rem; font-weight: 700; color: #CBD5E1; text-transform: uppercase; letter-spacing: 0.05em;">${item.badge}</span>
          </div>`;
 
-    const buttonHtml = isPublic
-      ? `<a href="${item.liveUrl}" target="_blank" class="btn btn-primary btn-sm" style="font-weight: 700;">
-           <i class="fa-solid fa-arrow-up-right-from-square"></i> ${item.ctaText || 'View Live App'}
+    const buttonHtml = item.liveUrl
+      ? `<a href="${item.liveUrl}" ${item.liveUrl.startsWith('http') ? 'target="_blank"' : ''} class="btn btn-primary btn-sm" style="font-weight: 700;">
+           <i class="${item.liveUrl.includes('play.google.com') ? 'fa-brands fa-google-play' : item.liveUrl.startsWith('http') ? 'fa-solid fa-arrow-up-right-from-square' : 'fa-solid fa-file-lines'}"></i> ${item.ctaText || 'View Details'}
          </a>`
       : `<button disabled class="btn btn-outline btn-sm" style="opacity: 0.45; cursor: not-allowed; pointer-events: none; background: #F1F5F9; color: #64748B; border-color: #CBD5E1;">
-           <i class="fa-solid fa-lock"></i> Not Publicly Accessible
+           <i class="fa-solid fa-lock"></i> Private System
          </button>`;
 
     return `
-      <div class="project-card flex flex-col justify-between" style="background: #FFFFFF; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-gray-light); box-shadow: var(--shadow-sm);">
+      <div class="project-card flex flex-col justify-between" style="background: #FFFFFF; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-gray-light); box-shadow: var(--shadow-sm); transition: transform 0.2s ease, box-shadow 0.2s ease;">
         <div>
           ${imgHtml}
           <div class="project-body" style="padding: 1.25rem;">
@@ -108,9 +111,12 @@ window.openProjectModal = function(id) {
   const content = document.getElementById('projectModalBody');
   if (!modal || !content) return;
 
+  const bgBg = project.id === 'property-lynk' ? '#0A192F' : project.id === 'easy-order' ? '#FFF7ED' : project.id === 'naledi-school' ? '#00C4EE' : '#F8FAFC';
+  const fitStyle = project.id === 'cavista-award' || project.id === 'bdih-hackathon' ? 'object-fit: cover;' : 'object-fit: contain; padding: 1rem;';
+
   content.innerHTML = `
-    <div class="project-img-wrapper" style="height: 280px; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-      <img src="${project.image}" alt="${project.title}" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80'" />
+    <div class="project-img-wrapper" style="height: 280px; border-radius: var(--radius-md); margin-bottom: 1.5rem; background: ${bgBg}; overflow: hidden;">
+      <img src="${project.image}" alt="${project.title}" style="width: 100%; height: 100%; ${fitStyle}" />
     </div>
     <span class="section-tag" style="margin-bottom: 0.5rem;">${project.badge || project.category}</span>
     <h2 style="margin-bottom: 1rem;">${project.title}</h2>
@@ -119,18 +125,18 @@ window.openProjectModal = function(id) {
     <div style="background-color: var(--color-bg-light); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
       <h4 style="margin-bottom: 0.5rem;">Engineering Highlights</h4>
       <ul class="feature-list">
-        <li class="feature-item"><i class="fa-solid fa-check"></i> Built & supported by AutobotsDev engineering team</li>
+        <li class="feature-item"><i class="fa-solid fa-check"></i> Built & supported by AutoBots Dev engineering team in Gaborone</li>
         <li class="feature-item"><i class="fa-solid fa-check"></i> Modern responsive frontend UI/UX & robust cloud DB backend</li>
-        <li class="feature-item"><i class="fa-solid fa-check"></i> High performance tailored for African business scale</li>
+        <li class="feature-item"><i class="fa-solid fa-check"></i> High performance software tailored for African market scale</li>
       </ul>
     </div>
 
     <div class="flex justify-between gap-2" style="flex-wrap: wrap;">
-      <a href="${project.liveUrl || 'quote.html'}" target="_blank" class="btn btn-primary btn-lg">
+      ${project.liveUrl ? `<a href="${project.liveUrl}" ${project.liveUrl.startsWith('http') ? 'target="_blank"' : ''} class="btn btn-primary btn-lg">
         <i class="fa-solid fa-external-link"></i> ${project.ctaText || 'Visit Platform'}
-      </a>
+      </a>` : ''}
       <a href="quote.html" class="btn btn-secondary btn-lg">
-        <i class="fa-solid fa-calculator"></i> Build Similar System
+        <i class="fa-solid fa-calculator"></i> Scope Similar MVP
       </a>
     </div>
   `;
