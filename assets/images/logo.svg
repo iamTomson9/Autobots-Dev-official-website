@@ -1,28 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 140" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" width="100%" height="100%">
   <defs>
-    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3B82F6"/>
-      <stop offset="50%" stop-color="#1E6FFF"/>
-      <stop offset="100%" stop-color="#0D4FD6"/>
-    </linearGradient>
-    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Gradients matching brand sign -->
+    <linearGradient id="leftTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#60A5FA"/>
       <stop offset="100%" stop-color="#3B82F6"/>
     </linearGradient>
+    
+    <linearGradient id="leftBottomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <linearGradient id="rightTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+
+    <linearGradient id="rightBottomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1E40AF"/>
+    </linearGradient>
+
+    <linearGradient id="mintGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="100%" stop-color="#2DD4BF"/>
+    </linearGradient>
+
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
   </defs>
 
-  <!-- Left Bracket Shape -->
-  <path d="M 50 20 L 80 50 L 80 75 L 50 105 L 35 90 L 55 70 L 55 55 L 35 35 Z" fill="url(#blueGrad)" />
-  
-  <!-- Right Bracket Shape -->
-  <path d="M 85 45 L 115 75 L 115 100 L 85 130 L 70 115 L 90 95 L 90 80 L 70 60 Z" fill="url(#blueGrad)" />
+  <!-- Left Angled Chevron (<) Facets -->
+  <path d="M 75 25 L 45 55 L 60 70 L 90 40 Z" fill="url(#leftTopGrad)" />
+  <path d="M 45 55 L 75 85 L 90 70 L 60 70 Z" fill="url(#leftBottomGrad)" />
 
-  <!-- Code Dots -->
-  <rect x="105" y="25" width="14" height="14" rx="3" fill="url(#cyanGrad)" />
-  <rect x="125" y="25" width="14" height="14" rx="3" fill="#38BDF8" />
-  <rect x="125" y="45" width="14" height="14" rx="3" fill="#818CF8" />
+  <!-- Right Angled Chevron (>) Facets -->
+  <path d="M 85 55 L 115 85 L 100 100 L 70 70 Z" fill="url(#rightTopGrad)" />
+  <path d="M 115 85 L 85 115 L 70 100 L 100 100 Z" fill="url(#rightBottomGrad)" />
+
+  <!-- Pixel Grid Dots (Top Right of Right Chevron) -->
+  <rect x="102" y="34" width="14" height="14" rx="3.5" fill="url(#mintGrad)" />
+  <rect x="120" y="34" width="14" height="14" rx="3.5" fill="url(#skyGrad)" />
+  <rect x="120" y="52" width="14" height="14" rx="3.5" fill="url(#purpleGrad)" />
 
   <!-- Brand Typography -->
-  <text x="160" y="75" font-family="'Outfit', sans-serif" font-weight="800" font-size="42" fill="#1A1A2E" letter-spacing="-0.5">Autobots <tspan fill="#1E6FFF">dev</tspan></text>
-  <text x="162" y="105" font-family="'Outfit', sans-serif" font-weight="600" font-size="14" fill="#718096" letter-spacing="4">CREATE . INNOVATE . AUTOMATE</text>
+  <text x="160" y="74" font-family="'Outfit', 'Inter', system-ui, sans-serif" font-weight="800" font-size="44" fill="currentColor" letter-spacing="-0.5">Autobots <tspan fill="#3B82F6">dev</tspan></text>
+  <text x="162" y="102" font-family="'Outfit', 'Inter', system-ui, sans-serif" font-weight="600" font-size="14" fill="#94A3B8" letter-spacing="3.5">Create.Innovate.Automate</text>
 </svg>

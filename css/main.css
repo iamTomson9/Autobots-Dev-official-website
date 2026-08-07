@@ -9,12 +9,12 @@
 :root {
   --color-obsidian: #1A1A2E;
   --color-obsidian-light: #2A2A42;
-  --color-blue: #1E6FFF;
-  --color-blue-dark: #0D4FD6;
+  --color-blue: #1658E8;
+  --color-blue-dark: #0D45B7;
   --color-blue-light: #EBF2FF;
-  --color-black: #111111;
-  --color-gray-dark: #4A5568;
-  --color-gray: #718096;
+  --color-black: #0F172A;
+  --color-gray-dark: #334155;
+  --color-gray: #475569;
   --color-gray-light: #E2E8F0;
   --color-bg-light: #F8FAFC;
   --color-white: #FFFFFF;
@@ -728,9 +728,9 @@ img {
   gap: 0.5rem;
   padding: 0.35rem 1rem;
   background-color: var(--color-blue-light);
-  color: var(--color-blue);
+  color: var(--color-blue-dark);
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.875rem;
   border-radius: var(--radius-full);
   margin-bottom: 1rem;
